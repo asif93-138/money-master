@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money master</title>
+
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+</style>
+
+</head>
+
+<body class="container">
+
+<header class="d-flex justify-content-center align-items-center">
+<h1 class="text-primary text-center my-4"><strong>Money Master</strong></h1>
+<img style="width:60px;height:60px;" class="rounded-circle p-1 ms-2" src="https://media.istockphoto.com/id/1418687315/photo/gold-coin-dollar-us-currency-money-icon-sign-or-symbol-business-and-financial-exchange-3d.jpg?s=1024x1024&w=is&k=20&c=j730Bo8O_DXmqmNQvC50cRQriGKo0cyKL35SsT2RCU0=">
+</header>
+
+<main class="d-lg-flex justify-content-around align-items-center">
+<img style="height:600px;" class="img-fluid" src="https://media.istockphoto.com/id/516714306/photo/graphs-and-calculator.jpg?s=1024x1024&w=is&k=20&c=N54BP5uNA4eZLwcBWbEvVcfSuYZs_wC-ZgzkWt3U5uI=">
+<section>
+<h5 class="text-center">Income</h5>
+<p class="text-start text-lg-end me-3"><b>Income:</b> <input id="inc" type="number" min="0" step="1" class=""></p>
+<h5 class="text-center">Expenses</h5>
+<p class="text-start text-lg-end me-3"><b>Food:</b> <input id="ex1" type="number" min="0" step="1" class=""></p>
+<p class="text-start text-lg-end me-3"><b>Rent:</b> <input id="ex2" type="number" min="0" step="1" class=""></p>
+<p class="text-start text-lg-end me-3"><b>Clothes:</b> <input id="ex3" type="number" min="0" step="1" class=""></p>
+<p class="text-start text-lg-end me-3"><button onclick="calc()" type="button">Calculate</button></p>
+<h5 class="text-center">Total Expenses: <span id="ex">0</span></h5>
+<h5 class="text-center">Balance: <span id="bal">0</span></h5>
+<article>
+<p class="d-inline text-end"><b>Save:</b> <input id="sa" type="number" min="0" step="1" class=""> % </p>
+<button type="button" onclick="sav()" class="">Save</button>
+<h5 class="text-center">Saving amount: <span id="sam">0</span></h5>
+<h5 class="text-center">Remaining balance: <span id="rbal">0</span></h5>
+</article>
+</section>
+</main>
+
+<footer>
+</footer>
+
+<script>
+function calc() {document.getElementById("ex").innerHTML=Number(document.getElementById("ex1").value)+Number(document.getElementById("ex2").value)+Number(document.getElementById("ex3").value); document.getElementById("bal").innerHTML=Number(document.getElementById("inc").value)-Number(document.getElementById("ex").innerHTML)}
+function sav() {document.getElementById("sam").innerHTML=Number(document.getElementById("inc").value)*(Number(document.getElementById("sa").value)/100); document.getElementById("rbal").innerHTML=Number(document.getElementById("bal").innerHTML)-Number(document.getElementById("sam").innerHTML);}
+</script>
+
+</body>
+
+</html>
